@@ -1,0 +1,10 @@
+# Position of the map's (0, 0, 0). Without this file a map is loaded as a plain NavMap
+# without geolocation.
+georeferenced: false
+origin_lat: 0
+origin_lon: 0
+reference_altitude: 0
+min_resolution: 0.400000006
+# --recenter: x, y of the cloud + offset = x, y of this map
+offset_x: 0
+offset_y: 0

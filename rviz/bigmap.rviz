@@ -1,0 +1,169 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /NavMap LOD1
+        - /LOD markers1
+      Splitter Ratio: 0.5
+    Tree Height: 500
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Enabled: true
+      Name: Grid
+      Cell Size: 10
+      Plane Cell Count: 60
+      Color: 160; 160; 164
+      Alpha: 0.3
+      Value: true
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Name: TF
+      Frame Timeout: 15
+      Show Names: false
+      Value: true
+    - Class: rviz_default_plugins/PointCloud2
+      Enabled: true
+      Name: Bonxai map (AMCL)   # the map AMCL localizes on; absent (no messages) without a bonxai map
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /maps_manager_node/bonxai/map
+      Style: Points
+      Size (Pixels): 2
+      Size (m): 0.05
+      Alpha: 0.6
+      Color Transformer: AxisColor
+      Axis: Z
+      Use Fixed Frame: true
+      Use rainbow: true
+      Autocompute Value Bounds: true
+      Decay Time: 0
+      Position Transformer: XYZ
+      Selectable: false
+      Value: true
+    - Class: rviz_default_plugins/RobotModel
+      Enabled: true
+      Name: summit_xl
+      Description Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robot_description
+      Value: true
+    - Alpha: 1
+      Class: navmap_rviz_plugin/NavMapDisplay
+      Color Scheme: Heat
+      Draw Normals: false
+      Enabled: true
+      Layer: Color (vertex RGBA)   # satellite imagery; use "elevation" or "lod_size" for heat maps
+      Name: NavMap LOD
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /maps_manager_node/bigmap/map
+      Update Layer Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /maps_manager_node/bigmap/map_updates
+      Value: true
+    - Alpha: 1
+      Class: navmap_rviz_plugin/NavMapDisplay
+      Color Scheme: Heat
+      Draw Normals: false
+      Enabled: true
+      Layer: obstacle_height
+      Name: Dynamic map (raised NavCels)
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /maps_manager_node/bigmap/dynamic_map
+      Update Layer Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: ""
+      Value: true
+    - Class: rviz_default_plugins/Path
+      Enabled: true
+      Name: A* path
+      Color: 255; 255; 0
+      Line Style: Billboards
+      Line Width: 0.15
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /planner_node/astar/path
+      Value: true
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: LOD markers
+      Namespaces:
+        lod_high_res_radius: true
+        lod_triangles: false
+        lod_wireframe: true
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /maps_manager_node/bigmap/markers
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: map
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/FocusCamera
+    - Class: rviz_default_plugins/Measure
+    - Class: navmap_rviz_plugin/SetGoal
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /goal_pose
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Name: Current View
+      Distance: 180
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      Pitch: 0.9
+      Yaw: 0.8
+      Target Frame: map
+      Value: Orbit (rviz)
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 1000
+  Width: 1500
